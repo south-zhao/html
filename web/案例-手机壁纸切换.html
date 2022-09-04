@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .mi{
+            width: 700px;
+            height: 700px;
+            margin: 100px auto;
+            border: 3px solid #096;
+        }
+        .phone{
+            width: 200px;
+            height: 450px;
+            margin: 50px auto;
+            border: 5px solid black;
+            border-radius: 30px; 
+            background: url('../img/1.jpg') center/cover;
+        }
+
+        .album{
+            list-style: none;
+            margin: 5px auto;
+            width: 600px;
+            height: 80px;
+            background-color: #123;   
+        }
+        .wallpage{
+            float: left; /* 向左浮动*/
+            margin: 10px;
+            width: 60px;
+            height: 60px;
+            background: url('../img/1.jpg') center/cover;
+        }
+
+        /* 子类选择器 --> 在有多个子元素的情况下.可以选中里面的内容*/
+        .wallpage:nth-child(2){
+            background: url('../img/2.jpg') center/cover;
+        }
+        .wallpage:nth-child(3){
+            background: url('../img/3.jpg') center/cover;
+        }
+        .wallpage:nth-child(4){
+            background: url('../img/4.jpg') center/cover;
+        }
+        .wallpage:nth-child(5){
+            background: url('../img/5.jpg') center/cover;
+        }
+        .wallpage:nth-child(6){
+            background: url('../img/6.jpg') center/cover;
+        }
+        .wallpage:nth-child(7){
+            background: url('../img/7.jpg') center/cover;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="mi"> <!-- 包裹内容的容器. 手机,候选款都放它里面-->
+        <div class="phone"></div>
+        <ul class="album">
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+        </ul>
+    </div>
+    <!-- 导入了一个模块叫做jquery.就可以用它的功能 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        /* 设置点击事件.当用户点击指定内容的时候就会触发反应
+            1.点什么东西  2.什么东西发生改变  3.改变什么?
+            点候选图         手机里的壁纸       把手机壁纸换成点击的候选图的图片
+        */
+        $('.wallpage').click(function(){ /* 当我点击wallpage的时候触发一个事件*/
+            $('.phone').css('background-image',$(this).css('background-image'))
+            /* 当我点击图片时. phone里的背景图片就切换为我当前点击的背景图片.*/
+        });
+    </script>
+</body>
+</html>
+<!-- mi:容器盒子 phone:手机盒子  album:相框  wallpage:壁纸 -->

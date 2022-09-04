@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function validateForm(){
+				var x = document.forms["myForm"]["fname"].value;
+				if (x == null || x == "") {
+					alert("需要的名字");
+					return false;
+				}
+				else{alert("你的名字提交成功！")}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myForm" action="" onsubmit="return validateForm()" method="POST">
+			名字:<input type="text" name="fname"/>
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

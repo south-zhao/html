@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    margin: 50px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #6cf;
+    font-weight: 200;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.medium {
+    margin: 50px auto;
+    width: 900px;
+    height: 550px;
+    background-color: #096;
+}
+
+.medium img {
+    margin: 75px auto;
+    padding-left: 250px;
+}
+
+.medium img:hover {
+    transform: scale(1.3);
+    transition: 1s;
+}
+
+.bottom {
+    background-image: url("../img/2(1).jpg");
+    width: 900px;
+    height: 550px;
+    color: red;
+    margin: 50px auto;
+    padding: 10px;
+}

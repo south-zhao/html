@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .register{
+            width: 900px;
+            height: 500px;
+            margin: 50px auto;
+            border: 3px solid #ddd;
+        }
+        .msg{
+            float: left;
+            width: 100%; /* 跟父级一样宽 */
+            height: 40px;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .msg span{
+            float: left;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 30px;
+        }
+        .msg p{
+            line-height: 0px;
+            text-indent: 2em; /* em字符单位.相当于缩进了2个字*/
+        }
+        .text{
+            float: left;
+            width: 300px;
+            height: 40px;
+            border: 2px solid #ddd;
+        }
+        .code{
+            width: 100px;
+        }
+        .btn{
+            float: left;
+            height: 44px;
+        }
+        .input-code{
+            float: left;
+            position: relative;
+            left: 90px;
+        }
+        .check{  /* 确认登录的盒子*/
+            float: left;
+            width: 300px;
+            height: 40px;
+            margin: 15px 0 0 300px; /* 距离上方和左方分别15/300像素*/
+        }
+        .accept{
+            float: left;
+            margin-top: 22px;
+        }
+        .reg{
+            text-align: center;
+            width: 300px;
+            height: 40px;
+            margin-left: 270px;
+            font-size: 20px;
+            color: #096;
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <form action="">
+            <div class="msg">
+                <span>用户名:</span>
+                <input type="text" class="text">
+                <p>请设置用户名</p>
+            </div>
+            <div class="msg">
+                <span>密码:</span>
+                <input type="password" class="text">
+                <p>请输入密码.需要6-20位字符</p>
+            </div>
+            <div class="msg">
+                <span>确认密码:</span>
+                <input type="password" class="text">
+                <p>请确认密码.需要6-20位字符</p>
+            </div>
+            <div class="msg">
+                <span>验证手机:</span>
+                <input type="text" class="text">
+                <p>请输入手机号,后续可以通过手机找回密码</p>
+            </div>
+            <div class="msg">
+                <span>短信验证码:</span>
+                <input type="text" class="text code">
+                <button class="btn">获取短信验证码</button>
+                <p class="input-code">请输入验证码</p>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" class="accept">
+                <p>
+                    <a href="http://www.cxy521.com/">已阅读并同意《多喝热水》协议</a>
+                </p>
+            </div>
+            <input type="submit" value="立即注册" class="reg">
+        </form>
+    </div>
+</body>
+</html>
+<!-- register注册界面的大盒子 
+    msg注册界面的子盒子.负责不同的注册信息
+    text输入框
+    code -- 验证码输入窗口  btn获取验证码的按钮
+    input-code - 输入验证码的p标签
+    check = 同意注册的盒子  accept=同意的选择框
+    reg = 立即注册按钮
+-->

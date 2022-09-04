@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .register {
+            width: 900px;
+            height: 500px;
+            margin: 50px auto;
+            border: 3px solid #ddd;
+        }
+        
+        .msg {
+            float: left;
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        .msg span {
+            float: left;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 30px;
+        }
+        
+        .msg p {
+            line-height: 0px;
+            text-indent: 2em;
+        }
+        
+        .text {
+            float: left;
+            width: 300px;
+            height: 40px;
+            border: 2px solid #ddd;
+        }
+        
+        .code {
+            width: 100px;
+        }
+        
+        .btn {
+            float: left;
+            height: 44px;
+        }
+        
+        .pr {
+            float: left;
+            position: relative;
+            left: 90px;
+        }
+        
+        .check {
+            float: left;
+            width: 300px;
+            height: 40px;
+            margin: 15px 0 0 300px;
+        }
+        
+        .accept {
+            float: left;
+            margin-top: 22px;
+        }
+        
+        .reg {
+            text-align: center;
+            width: 300px;
+            height: 40px;
+            margin-left: 270px;
+            font-size: 20px;
+            color: #096;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register">
+        <form action="">
+            <div class="msg">
+                <span>用户名</span>
+                <label><input type="text" placeholder="请设置账号名称" class="text"></label>
+                <p>请设置用户名</p>
+            </div>
+            <div class="msg">
+                <span>密码</span>
+                <label><input type="password" class="text"></label>
+                <p>请设置用密码，需要6-20位</p>
+            </div>
+            <div class="msg">
+                <span>确认密码</span>
+                <label><input type="text" class="text"></label>
+                <p>请设置用密码，需要6-20位</p>
+            </div>
+            <div class="msg">
+                <span>验证手机</span>
+                <label><input type="text" class="text"></label>
+                <p>请输入手机号，通过手机找回密码</p>
+            </div>
+            <div class="msg">
+                <span>短信验证码</span>
+                <label><input type="text" class="text code"></label>
+                <button class="btn">获取短信验证码</button>
+                <p class="pr">请输入验证码</p>
+            </div>
+
+            <div class="check">
+                <label>
+                    <input type="checkbox" class="accept">
+                </label>
+                <p>
+                    <a href="https://www.baidu.com">已阅读并同意《多喝热水》协议</a>
+                </p>
+            </div>
+            <input type="submit" value="立即注册" class="reg">
+        </form>
+    </div>
+</body>
+
+</html>

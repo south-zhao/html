@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .mi {
+            width: 700px;
+            height: 700px;
+            margin: 100px auto;
+            border: 3px solid #096;
+        }
+        
+        .phone {
+            width: 200px;
+            height: 450px;
+            margin: 50px auto;
+            border: 5px solid black;
+            border-radius: 15px;
+            background: url("../img/1(1).jpg") center/cover;
+        }
+        
+        .album {
+            list-style: none;
+            width: 600px;
+            height: 80px;
+            background-color: #123;
+            margin: 5px auto;
+        }
+        
+        .wallpage {
+            float: left;
+            margin: 10px;
+            height: 60px;
+            width: 60px;
+            background: url('../img/1(1).jpg') center/cover;
+        }
+        
+        .wallpage:nth-child(2) {
+            background: url('../img/2(1).jpg') center/cover;
+        }
+        
+        .wallpage:nth-child(3) {
+            background: url('../img/3.jpg') center/cover;
+        }
+        
+        .wallpage:nth-child(4) {
+            background: url('../img/4.jpg') center/cover;
+        }
+        
+        .wallpage:nth-child(5) {
+            background: url('../img/5.jpg') center/cover;
+        }
+        
+        .wallpage:nth-child(6) {
+            background: url('../img/6.jpg') center/cover;
+        }
+        
+        .wallpage:nth-child(7) {
+            background: url('../img/7.jpg') center/cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mi">
+        <div class="phone"></div>
+        <ul class="album">
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+            <li class="wallpage"></li>
+        </ul>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $('.wallpage').click(function() {
+            $('.phone').css('background-image', $(this).css('background-image'))
+        });
+    </script>
+</body>
+
+</html>

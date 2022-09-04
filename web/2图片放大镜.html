@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> /* style是样式的意思. css样式就是写在这*/
+        body{
+            margin: 0; /* 外边距设为0 */
+            padding: 0; /* 内边距设为0 */
+        }
+        #album{
+            margin: 100px auto; /* 距离上面100px  距离左右.自动计算自动居中*/
+            padding: 15px; /* 设置内边距15px */
+            text-align: center; /* 设置里面的内容居中*/
+            width: 800px; /* 宽度,单位为像素  px像素*/
+            height: 400px; /* 高度*/
+            background-color: #096;
+        }
+
+        #album img{  /**选中alubm里面的所有图片*/
+            width: 250px;
+            height: 190px;
+        }
+
+        /*伪类选择器 --> 通过样式的方式给标签加属性加效果. 当鼠标经过img图片时.就触发效果. 正经动态效果还是用js */
+        #album img:hover{
+            transform: scale(2); /*css3的新标签. 编写标签.  scale = 缩放*/
+            transition: 1s; /* 演示操作. 让样式生效的时候有个过度*/
+        }
+    </style>
+</head>
+<body>
+    <div id = 'album'> <!-- 盒子标签,作为容器来包裹数据.默认是没有样式 没有宽高 没有颜色-->
+        <img src="../img/1.jpg" alt="">
+        <img src="../img/2.jpg" alt="">
+        <img src="../img/3.jpg" alt="">
+        <img src="../img/4.jpg" alt="">
+        <img src="../img/5.jpg" alt="">
+        <img src="../img/6.jpg" alt="">
+    </div>
+</body>
+</html>

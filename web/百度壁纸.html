@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: url("../img/2(1).jpg") no-repeat 0 0/cover;
+        }
+
+        ul li{
+            list-style: none;
+        }
+
+        .album{
+            width: 100%;
+            height: 200px;
+            background-color: rgba(0,0,0, .5);
+        }
+
+        .album ul{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 200px;
+        }
+
+        .album img{
+            width: 200px;
+            height: 150px;
+        }
+
+        .box:nth-child(1){
+            background-image: url("../img/1(1).jpg");
+        }
+
+        .box:nth-child(2){
+            background-image: url("../img/2(1).jpg");
+        }
+
+        .box:nth-child(3){
+            background-image: url("../img/3.jpg");
+        }
+
+        .box:nth-child(4){
+            background-image: url("../img/4.jpg");
+        }
+    </style>
+</head>
+<body class="body">
+<div class="album">
+    <ul>
+        <li class="box"><img src="../img/1(1).jpg" alt=""></li>
+        <li class="box"><img src="../img/2(1).jpg" alt=""></li>
+        <li class="box"><img src="../img/3.jpg" alt=""></li>
+        <li class="box"><img src="../img/4.jpg" alt=""></li>
+    </ul>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $('.box').click(function() {
+            $('.body').css('background-image', $(this).css('background-image'))
+        });
+    </script>
+</div>
+</body>
+</html>
