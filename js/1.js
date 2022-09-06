@@ -5,7 +5,6 @@ let a1 = "你好呀"
 // c = { name: "jajis", age: 18 }
 // console.log(c.name)
 // console.log(c['age'])
-
 let a = 1
 let b = '1'
 console.log(a+b)
