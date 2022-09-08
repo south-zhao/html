@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function fun() {
+    //     document.write("多喝热水<br>")
+    //     return "你好";
+    // }
+    // let name = fun()
+    // document.write(name)
+    // function f(age=16) {
+    //     document.write(`你好我今年${age}岁<br>`)
+    // }
+    // f(20)
+    // f()
+
+    // 匿名函数  自执行函数
+    // (function (name) {
+    //     document.write(`我叫${name}`)
+    // })("你好")
+    (function (){
+        document.write('人生苦短，我选python+JavaScript')
+    })()
+
+    function max(a, b) {
+        if(a>b)
+            document.write(a)
+        else
+            document.write(b)
+    }
+
+    function pr(num) {
+        let n = 0
+        while (n<num)
+        {
+            document.write("多喝热水")
+            n++
+        }
+    }
+
+    function f(n = "多喝热水") {
+        document.write(`${n}要多喝热水`)
+    }
+
+    max(10,14)
+
+    pr(10)
+
+    f("你好")
+
+</script>
+</body>
+</html>
