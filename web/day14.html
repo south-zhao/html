@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: #096;
+        }
+
+        #box2{
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+            border: 3px solid skyblue;
+        }
+    </style>
+</head>
+<body>
+<div id="box" draggable="true"></div>
+<div id="box2"></div>
+<!--    <div id="box"></div>-->
+<!--<img src="../img/1.webp" alt="" width="700" height="700" id="pic">-->
+<!--<button id="up">上一张</button>-->
+<!--<button id="down">下一张</button>-->
+    <script>
+        let box = document.getElementById('box')
+
+        box.ondragstart = function () {
+            this.style.backgroundColor = 'aqua'
+        }
+
+        box.ondrag = function () {
+            this.style.backgroundColor = 'pink'
+        }
+
+        box.ondragend = function () {
+            this.style.backgroundColor = 'gold'
+        }
+
+        let box2 = document.getElementById('box2')
+
+        box2.ondragenter = function (ev) {
+            ev.preventDefault()
+            this.innerHTML = '哈哈哈'
+            this.style.backgroundColor = 'red'
+        }
+
+        box2.ondragleave = function (ev) {
+            ev.preventDefault()
+            this.innerHTML = '拜拜'
+            this.style.backgroundColor = '#6cf'
+        }
+        // let pic = document.getElementById('pic')
+        // let up = document.getElementById('up')
+        // let down = document.getElementById('down')
+        //
+        // let MaxP = 5, MinP = 1
+        // let nowP = MinP
+        //
+        // down.onclick = function () {
+        //     if(nowP === MaxP){
+        //         nowP = MinP
+        //     }
+        //     else {
+        //         nowP ++
+        //     }
+        //     pic.src = `../img/${nowP}.webp`
+        // }
+        //
+        // up.onclick = function () {
+        //     if(nowP === MinP){
+        //         nowP = MaxP
+        //     }
+        //     else {
+        //         nowP --
+        //     }
+        //     pic.src = `../img/${nowP}.webp`
+        // }
+
+        // let box = document.getElementById('box')
+        //
+        // let is_green = true
+        //
+        // box.onclick = function() {
+        //     if(is_green){
+        //         this.style.backgroundColor = 'pink'
+        //         is_green = false
+        //     }
+        //     else {
+        //         this.style.backgroundColor = '#096'
+        //         is_green = true
+        //     }
+        // }
+    </script>
+</body>
+</html>
