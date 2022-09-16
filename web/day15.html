@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: #096;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+<!--        <p id="act">你好</p>-->
+    </div>
+
+    <script>
+        let box = document.getElementById('box')
+
+        box.onmouseover = function () {
+            box.style.backgroundColor = "#6cf"
+        }
+
+        box.onmouseout = function () {
+            this.style.backgroundColor = 'pink'
+        }
+        // let box = document.getElementById('box')
+        // let p = document.getElementsByTagName('p')
+        // let newNode = document.createElement('p')
+        // newNode.innerHTML = '你还好吗'
+        //
+        // box.appendChild(newNode)
+        // box.removeChild(newNode)
+        //
+        // let newNode2 = document.createElement('a')
+        // newNode2.innerHTML = '点我跳转百度贴吧'
+        // newNode2.href = 'http://c.biancheng.net/view/867.html'
+        //
+        // box.replaceChild(newNode2,p[0])
+    </script>
+</body>
+</html>

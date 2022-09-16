@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+        width: 200px;
+        height: 300px;
+        background-color: #096;
+        position: fixed;
+        left: 5px;
+        bottom: -300px;
+    }
+
+    .show{
+        bottom: 0;
+    }
+  </style>
+</head>
+<body>
+    <div id="box">
+      <b id="off">关闭</b>
+    </div>
+  <script>
+        let off = document.getElementById('off')
+        let box = document.getElementById('box')
+
+        off.onclick = function () {
+            box.className = ''
+            setTimeout(function () {
+                box.className = 'show'
+            },2000)
+        }
+
+        setTimeout(function () {
+            box.className = 'show'
+        },1000)
+  </script>
+</body>
+</html>
