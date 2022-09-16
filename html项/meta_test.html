@@ -6,9 +6,22 @@
 		<meta name="description" content="Web" />
 		<meta name="author" content="zuoz">
 		<meta name="copyright" content="stop" />
-		<meta http-equiv="refresh" content="6;url=https://www.luogu.com.cn/" />
 	</head>
 	<body>
-		<p>6秒后跳转到洛谷</p>
+<!--		<p>6秒后跳转到洛谷</p>-->
+		<a href="https://www.luogu.com.cn/">一起支持<span>5</span>秒后跳转到洛谷</a>
+	<script>
+		let a = document.getElementsByTagName('a')[0]
+
+		let num=5
+		time = setInterval(function () {
+			num --
+			a.innerHTML = `一起支持<span>${num}</span>秒后跳转到洛谷`
+			if(num === 0){
+				clearInterval(time)
+				location.href = 'https://www.luogu.com.cn/'
+			}
+		},1000)
+	</script>
 	</body>
 </html>
