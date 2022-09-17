@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h1 id="title">侠客行</h1>-->
+<!--<ul>-->
+<!--    <li class="item">赵客缦胡缨，吴钩霜月明</li>-->
+<!--    <li class="item">银鞍照白马，飒沓如流星</li>-->
+<!--    <li>十步杀一人，千里不留行</li>-->
+<!--    <li>事了拂身去，深藏身与名</li>-->
+<!--</ul>-->
+<input type="text">
+<input type="checkbox" id="check">我已阅读 <a href="#">多喝热水</a>协议
+<input type="submit" value="登录" id="btn">
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script>
+    $('#btn').click(function () {
+        // document.write($('check').attr('checked'))
+        $('#check').prop('checked')?alert('ok'):alert('请先阅读')
+    })
+    // let title = document.getElementById('title')
+    // $('#title').css('color','red').css('text-align','center')
+    // $('.item').css('background-color','aqua')
+    // $('ul li').css('list-style','none')
+    // $('.item:first').css('color','#096')
+    // $('.item:last').css('color','gold')
+    // $('li:eq(0)').css('font-size','30px')
+    // $('li:lt(3)').css('font-size','20px')
+    // $('li:gt(2)').css('font-size','20px')
+    // $('li:not(.item)').css('color','aqua')
+</script>
+</body>
+</html>

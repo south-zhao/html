@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <input type="checkbox" name="" id="check">我已阅读并同意<a href="#">多喝热水</a>协议
+    <input type="submit" value="登录" id="btn">
+
+    <div class="box" id="box1"></div>
+
+
+
+    <script src='jquery.min.js'></script> <!-- 导入本地文件-->
+    <script>
+        $('#btn').click(function(){
+            // attr获取到的是标签内部定义好的属性.
+            // console.log($('#check').attr('checked'))
+            $('#check').prop('checked')?alert('odk'):alert('请先阅读协议')
+            /* 判断你check元素里的cheked是否有值. 有值就odk 没值就先阅读*/
+        })
+
+        /* 同理也可以用作修改a标签的href  img标签的src等标签元素*/
+        console.log($('div').attr('id','kylin'))
+        console.log($('div').prop('id'))
+        console.log($('div').removeAttr('id'))
+
+        // attr和prop都是可以用来查看/修改标签属性 --> prop会检测到表单标签的变化
+
+    </script>
+
+</body>
+</html>
