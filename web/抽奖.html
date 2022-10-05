@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random()*(max - min + 1)+min)
+        }
+
+        let goods = ['霜之哀伤', '青眼白龙', '轩辕剑', '天上天下天地无双刀', '大嘴巴子', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾', '谢谢惠顾']
+
+        let random_num = getRandom(0,goods.length-1)
+        document.write(goods[random_num])
+    </script>
+</body>
+</html>

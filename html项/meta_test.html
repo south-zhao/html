@@ -12,14 +12,17 @@
 		<a href="https://www.luogu.com.cn/">一起支持<span>5</span>秒后跳转到洛谷</a>
 	<script>
 		let a = document.getElementsByTagName('a')[0]
-
+		a.style.textDecoration = 'none'
 		let num=5
 		time = setInterval(function () {
 			num --
 			a.innerHTML = `一起支持<span>${num}</span>秒后跳转到洛谷`
+			// alert(`一起支持${num}秒后跳转到洛谷`)
+
 			if(num === 0){
 				clearInterval(time)
 				location.href = 'https://www.luogu.com.cn/'
+				// alert('欢迎')
 			}
 		},1000)
 	</script>

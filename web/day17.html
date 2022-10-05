@@ -5,6 +5,27 @@
     <title>Title</title>
 </head>
 <body>
+    <h1 id="play"></h1>
 
+    <script>
+        let play = document.getElementById('play')
+
+        let timer = setInterval(function () {
+           let now = new Date()
+           let end = new Date('2022-09-27 21:00:00')
+            let left = parseInt((end - now) / 1000)
+
+            if(left<=0){
+                clearInterval(timer)
+                play.innerHTML = '活动结束了，你来晚了'
+                return
+            }
+            let day = parseInt(left / 86400)
+            let hour = parseInt(left % 86400 / 3600)
+            let minute = parseInt(left % 3600 / 60)
+            let second = parseInt(left % 60)
+            play.innerHTML = `距离活动结束还剩${day}:${hour}:${minute}:${second}`
+        }, )
+    </script>
 </body>
 </html>
