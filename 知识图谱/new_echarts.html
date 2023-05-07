@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../js/jquery-3.2.1.js"></script>
+  <script src="../js/echarts.js"></script>
+</head>
+<body>
+  <div id="main" style="width:1000px;height:800px"></div>
+  <script type="text/javascript">
+    const myEcharts = echarts.init(document.getElementById("main"));
+    const kind = [];
+    let data1 = [];
+    let linked = [];
+    let stu = ["赵鑫杰", "薛铮", "徐宁咛", "曹燕榕", "教师", "大创项目"];
+    let kin = [0, 0, 0, 0, 1, 2];
+    for (let i = 0; i < 3; i ++) {
+      kind[i] = {
+        name: "类别" + i
+      };
+    }
+
+    for (let j = 0; j < 6; j ++) {
+        data1.push({name: stu[j],
+        des: stu[j],
+        symbolSize: 70,
+        category: kin[j]})
+    }
+
+    option = {
+      title: {
+        text: "项目联系图"
+      },
+
+      tooltip: {
+        formatter: function (x) {
+          return x.data.des;
+        }
+      },
+
+      toolbox: {
+        show: true,
+        feature: {
+          mark: {
+            show: true
+          },
+          restore: {
+            show: true
+          },
+          saveAsImage: {
+            show: true
+          }
+        }
+      },
+
+      legend: [{
+        data: kind.map(function (a) {
+          return a.name;
+        })
+      }],
+
+      series: [{
+        type: 'graph',
+        layout: 'force',
+        symbolSize: 60,
+        roam: true,
+        edgeSymbol: ['circle', 'arrow'],
+        edgeSymbolSize: [2, 10],
+        edgeLabel: {
+          normal: {
+            textStyle: {
+              fontsize: 20
+            },
+            show: true,
+            formatter: function (x) {
+              return x.data.name;
+            }
+          }
+        },
+        force: {
+          repulsion: 2500,
+          edgeLength: [10, 50]
+        },
+        draggable: true,
+        lineStyle: {
+          normal: {
+            width: 2,
+            color: '#4b565b'
+          }
+        },
+        label: {
+          normal: {
+            show: true,
+            textStyle: {}
+          }
+        },
+        data: data1,
+        links: [{
+            source: "教师",
+            target: "赵鑫杰",
+            name: "辅导",
+            des: "辅导"
+        },{
+            source: "教师",
+            target: "薛铮",
+            name: "辅导",
+            des: "辅导"
+        },{
+            source: "赵鑫杰",
+            target: "徐宁咛",
+            name: "组长",
+            des: "组长"
+        },{
+            source: "曹燕榕",
+            target: "大创项目",
+            name: "负责",
+            des: "负责"
+        },{
+            source: "曹燕榕",
+            target: "赵鑫杰",
+            name: "同学",
+            des: "同学"
+        },{
+            source: "徐宁咛",
+            target: "薛铮",
+            name: "室友",
+            des: "室友"
+        },],
+        categories: kind,
+      }]
+    };
+
+    myEcharts.setOption(option);
+  </script>
+</body>
+</html>
