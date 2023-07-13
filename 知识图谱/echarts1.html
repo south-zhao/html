@@ -9,166 +9,252 @@
 
 <body>
 <div id="main" style="width:70%;height:800px;float: left"></div>
-<div id="a" style="width:30%;float: left">djiasdkkad</div>
+<!--<div id="a" style="width:30%;float: left">djiasdkkad</div>-->
 <script type="text/javascript">
-  var myChart = echarts.init(document.getElementById('main'));
-  var categories = [{name:"对象"},{name:"属性"},{name:"实例"}];
-  option = {
-    // 图的标题
-    title: {
-      text: 'ECharts 图谱可视化'
-    },
-    // 提示框的配置
-    tooltip: {
-      formatter: function (x) {
-        return x.data.des;
-      }
-    },
-    // 工具箱
-    toolbox: {
-      // 显示工具箱
-      show: true,
-      feature: {
-        mark: {
-          show: true
-        },
-        // 还原
-        restore: {
-          show: true
-        },
-        // 保存为图片
-        saveAsImage: {
-          show: true
-        }
-      }
-    },
-    legend: [{
-      // selectedMode: 'single',
-      data: categories.map(function (a) {
-        return a.name;
-      })
-    }],
-    series: [{
-      type: 'graph', // 类型:关系图
-      layout: 'force', //图的布局，类型为力导图
-      symbolSize: 40, // 调整节点的大小
-      roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
-      edgeSymbol: ['circle', 'arrow'],
-      edgeSymbolSize: [2, 10],
-      edgeLabel: {
-        normal: {
-          textStyle: {
-            fontSize: 20
-          }
-        }
-      },
-      force: {
-        repulsion: 2500,
-        edgeLength: [10, 50]
-      },
-      draggable: true,
-      lineStyle: {
-        normal: {
-          width: 2,
-          color: '#4b565b',
-        }
-      },
-      edgeLabel: {
-        normal: {
-          show: true,
-          formatter: function (x) {
-            return x.data.name;
-          }
-        }
-      },
-      label: {
-        normal: {
-          show: true,
-          textStyle: {}
-        }
-      },
+  // var myChart = echarts.init(document.getElementById('main'));
+  // var categories = [{name:"对象"},{name:"属性"},{name:"实例"}];
+  // option = {
+  //   // 图的标题
+  //   title: {
+  //     text: 'ECharts 图谱可视化'
+  //   },
+  //   // 提示框的配置
+  //   tooltip: {
+  //     formatter: function (x) {
+  //       return x.data.des;
+  //     }
+  //   },
+  //   // 工具箱
+  //   toolbox: {
+  //     // 显示工具箱
+  //     show: true,
+  //     feature: {
+  //       mark: {
+  //         show: true
+  //       },
+  //       // 还原
+  //       restore: {
+  //         show: true
+  //       },
+  //       // 保存为图片
+  //       saveAsImage: {
+  //         show: true
+  //       }
+  //     }
+  //   },
+  //   legend: [{
+  //     // selectedMode: 'single',
+  //     data: categories.map(function (a) {
+  //       return a.name;
+  //     })
+  //   }],
+  //   series: [{
+  //     type: 'graph', // 类型:关系图
+  //     layout: 'force', //图的布局，类型为力导图
+  //     symbolSize: 40, // 调整节点的大小
+  //     roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
+  //     edgeSymbol: ['circle', 'arrow'],
+  //     edgeSymbolSize: [2, 10],
+  //     edgeLabel: {
+  //       normal: {
+  //         textStyle: {
+  //           fontSize: 20
+  //         }
+  //       }
+  //     },
+  //     force: {
+  //       repulsion: 2500,
+  //       edgeLength: [10, 50]
+  //     },
+  //     draggable: true,
+  //     lineStyle: {
+  //       normal: {
+  //         width: 2,
+  //         color: '#4b565b',
+  //       }
+  //     },
+  //     edgeLabel: {
+  //       normal: {
+  //         show: true,
+  //         formatter: function (x) {
+  //           return x.data.name;
+  //         }
+  //       }
+  //     },
+  //     label: {
+  //       normal: {
+  //         show: true,
+  //         textStyle: {}
+  //       }
+  //     },
+  //
+  //     // 数据
+  //     data: [{
+  //       name: '员工',
+  //       des: '某公司的员工', //描述
+  //       symbolSize: 70,
+  //       category: '对象',
+  //     },{
+  //       name:'员工id', symbolSize: 50, category: '属性',
+  //     },{
+  //       name:'姓名', symbolSize: 50,category: '属性',
+  //     },{
+  //       name:'年龄', symbolSize: 50, category: '属性',
+  //     },{
+  //       name:'性别', symbolSize: 50, category: '属性',
+  //     },{
+  //       name:'出生日期',symbolSize: 50, category: '属性',
+  //     },{
+  //       name:'联系电话',symbolSize: 50, category: '属性',
+  //     },{
+  //       name:'岗位', symbolSize: 50, category: '属性',
+  //     }, {
+  //       name: '机构',
+  //       des: '',//没有描述
+  //       symbolSize: 50,
+  //       category:'对象',
+  //     }, {
+  //       name: '张三',
+  //       des: 'nodedes3',
+  //       symbolSize: 50,
+  //       category: '实例',
+  //     }],
+  //     links: [{
+  //       source:'员工',
+  //       target:'机构',
+  //       name:'工作于',
+  //       des:''
+  //     },{
+  //       source:'员工id',
+  //       target:'员工',
+  //       name:'isPropertyOf',
+  //       des:''
+  //     },{
+  //       source:'姓名',
+  //       target:'员工',
+  //       name:'isPropertyOf',
+  //       des:''
+  //     },{
+  //       source:'年龄',
+  //       target:'员工',
+  //       name:'isPropertyOf',
+  //       des:''
+  //     },{
+  //       source:'性别',
+  //       target:'员工',
+  //       name:'isPropertyOf',
+  //       des:''
+  //     },{
+  //       source:'出生日期',
+  //       target:'员工',
+  //       name:'isPropertyOf',
+  //       des:''
+  //     },{
+  //       source:'联系电话',
+  //       target:'员工',
+  //       name:'isPropertyOf',
+  //       des:''
+  //     },{
+  //       source:'岗位',
+  //       target:'员工',
+  //       name:'isPropertyOf',
+  //       des:''
+  //     },{
+  //       source:'张三',
+  //       target:'员工',
+  //       name:'isExampleOf',
+  //       des:''
+  //     }],
+  //     categories: categories,
+  //   }]
+  // };
+  // myChart.setOption(option);
+	var chartDom = document.getElementById('main');
+	var myChart = echarts.init(chartDom);
+	var option;
+	
+	let base = +new Date(1968, 9, 3);
+	let oneDay = 24 * 3600 * 1000;
+	let date = [];
+	let data = [Math.random() * 300];
+    console.log(data)
+	for (let i = 1; i < 20000; i++) {
+	  var now = new Date((base += oneDay));
+	  date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+      // console.log([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'))
+	  data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+      // console.log(Math.round((Math.random() - 0.5) * 20 + data[i - 1]))
+	}
+ 
+	option = {
+	  tooltip: {
+	    trigger: 'axis',
+	    position: function (pt) {
+	      return [pt[0], '10%'];
+	    }
+	  },
+	  title: {
+	    left: 'center',
+	    text: 'Large Area Chart'
+	  },
+	  toolbox: {
+	    feature: {
+	      dataZoom: {
+	        yAxisIndex: 'none'
+	      },
+	      restore: {},
+	      saveAsImage: {}
+	    }
+	  },
+	  xAxis: {
+	    type: 'category',
+	    boundaryGap: false,
+	    data: date
+	  },
+	  yAxis: {
+	    type: 'value',
+	    boundaryGap: [0, '100%']
+	  },
+	  dataZoom: [
+	    {
+	      type: 'inside',
+	      start: 0,
+	      end: 10
+	    },
+	    {
+	      start: 0,
+	      end: 10
+	    }
+	  ],
+	  series: [
+	    {
+	      name: 'Fake Data',
+	      type: 'line',
+	      symbol: 'none',
+	      sampling: 'lttb',
+	      itemStyle: {
+	        color: 'rgb(255, 70, 131)'
+	      },
+	      areaStyle: {
+	        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+	          {
+	            offset: 0,
+	            color: 'rgb(255, 158, 68)'
+	          },
+	          {
+	            offset: 1,
+	            color: 'rgb(255, 70, 131)'
+	          }
+	        ])
+	      },
+	      data: data
+	    }
+	  ]
+	};
+	
+	option && myChart.setOption(option);
 
-      // 数据
-      data: [{
-        name: '员工',
-        des: '某公司的员工', //描述
-        symbolSize: 70,
-        category: '对象',
-      },{
-        name:'员工id', symbolSize: 50, category: '属性',
-      },{
-        name:'姓名', symbolSize: 50,category: '属性',
-      },{
-        name:'年龄', symbolSize: 50, category: '属性',
-      },{
-        name:'性别', symbolSize: 50, category: '属性',
-      },{
-        name:'出生日期',symbolSize: 50, category: '属性',
-      },{
-        name:'联系电话',symbolSize: 50, category: '属性',
-      },{
-        name:'岗位', symbolSize: 50, category: '属性',
-      }, {
-        name: '机构',
-        des: '',//没有描述
-        symbolSize: 50,
-        category:'对象',
-      }, {
-        name: '张三',
-        des: 'nodedes3',
-        symbolSize: 50,
-        category: '实例',
-      }],
-      links: [{
-        source:'员工',
-        target:'机构',
-        name:'工作于',
-        des:''
-      },{
-        source:'员工id',
-        target:'员工',
-        name:'isPropertyOf',
-        des:''
-      },{
-        source:'姓名',
-        target:'员工',
-        name:'isPropertyOf',
-        des:''
-      },{
-        source:'年龄',
-        target:'员工',
-        name:'isPropertyOf',
-        des:''
-      },{
-        source:'性别',
-        target:'员工',
-        name:'isPropertyOf',
-        des:''
-      },{
-        source:'出生日期',
-        target:'员工',
-        name:'isPropertyOf',
-        des:''
-      },{
-        source:'联系电话',
-        target:'员工',
-        name:'isPropertyOf',
-        des:''
-      },{
-        source:'岗位',
-        target:'员工',
-        name:'isPropertyOf',
-        des:''
-      },{
-        source:'张三',
-        target:'员工',
-        name:'isExampleOf',
-        des:''
-      }],
-      categories: categories,
-    }]
-  };
-  myChart.setOption(option);
 </script>
 </body>
 </html>
+
